@@ -4,3 +4,4 @@ console.log("first dog");
 console.log("second dog");
 console.log("third dog");
 console.log("fourth dog");
+console.log("fifth dog");
