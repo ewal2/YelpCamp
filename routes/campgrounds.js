@@ -131,6 +131,7 @@ router.put("/:id", middleware.checkCampgroundOwnership, upload.single("image"), 
          }
            campground.name = req.body.campground.name;
            campground.description = req.body.campground.description;
+           campground.price = req.body.campground.price;
            campground.save();
            req.flash("success", "Successfully Updated!");
            res.redirect("/campgrounds/" + campground._id);
