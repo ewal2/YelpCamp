@@ -19,16 +19,22 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item <%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a href="/campgrounds">Home</a></li>
+            <li class="nav-item <%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>">
+             <a href="/campgrounds" class="nav-link">Home</a>
+            </li>
           </ul>
           
           <ul class="navbar-nav navbar-right">
               <% if(!currentUser){ %>
-                  <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">Login</a></li>
-                  <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">Sign Up</a></li>
+                  <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>">
+                     <a href="/login" class="nav-link">Login</a>
+                  </li>
+                  <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>">
+                      <a href="/register" class="nav-link">Sign Up</a>
+                  </li>
               <% } else { %>
-                  <li><a href="#">Signed In As <%= currentUser.username %></a></li>
-                  <li><a href="/logout">Logout</a></li>
+                  <li><a href="#" class="nav-link">Signed In As <%= currentUser.username %></a></li>
+                  <li><a href="/logout" class="nav-link">Logout</a></li>
               <% } %>
           </ul>
           
