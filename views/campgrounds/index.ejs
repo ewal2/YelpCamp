@@ -33,6 +33,14 @@
                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
                    </p>
                 </div>
+                
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="<%= campground.image %>" alt="<%= campground.name %>">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= campground.name %></h5>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
             </div>
         <% }); %>
     </div>
