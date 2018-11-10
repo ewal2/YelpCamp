@@ -22,7 +22,6 @@
                                 <button type="submit" class="btn btn-danger">Delete</button>
                              </div>
                         </form>
-                        
                     <% } %>
                  </div>
                 </div>
@@ -49,24 +48,18 @@
                             </div>
                             <div class="float-right">
                                 <p><%= moment(comment.createdAt).fromNow() %></p>
-                                
                                 <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
-                                <div class=" row float-right"> 
-                                <a class="btn btn-sm btn-warning" href="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                                <div class="float-right">
                                   <form class="delete-form" action="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+                                     <a class="btn btn-sm btn-warning" href="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>/edit" role="button">Edit</a>
                                      <input type="submit" class="btn btn-sm btn-danger" value="Delete">
                                   </form>
                                 </div>
-                                
                                 <% } %>
                             </div>
-                            
-                         
                             </div>
                         </div>
-                        
                     </div>
-                  
                       <% }) %>
                      </div>
                   </div>
