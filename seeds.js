@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var Campground = require("./models/campground");
 var Comment   = require("./models/comment");
 
-var data = [
+var campgrounds = [
     {
         name: "Decent Campground", 
         image: "https://farm4.staticflickr.com/3795/10131087094_c1c0a1c859.jpg",
@@ -21,9 +21,8 @@ var data = [
 ]
 
 function seedDB(){
-    Comment.remove({}, function(err){
-        
-    Campground.remove({}, function(err){
+    await Comment.remove({});
+    await Campground.remove({});
         
         data.forEach(function(seed){
             Campground.create(seed, function(err, campground){
@@ -48,8 +47,7 @@ function seedDB(){
                 }
             });
         });
-    }); 
-  });
 }
+
 
 module.exports = seedDB;
