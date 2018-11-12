@@ -9,7 +9,7 @@ var crypto = require("crypto");
 //var smtpTransport = require("nodemailer-smtp-transport");
 var api_key = '3a2c1e4d3ae3bd408b5d78c8508f6be4-a3d67641-0b43a82a';
 var domain = 'sandboxd059a61bddcf4eb088b9e2accd83d95f.mailgun.org';
-var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
+//var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
  
 
 //root route
