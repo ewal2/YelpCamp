@@ -21,8 +21,11 @@ var seeds = [
 ];
 
 function seedDB(){
-    await Comment.remove({});
     await Campground.remove({});
+    console.log("Camprgrounds removed");
+    await Comment.remove({});
+    
+    
     for(const seed of seeds){
         let campground = await Campground.create(seed);
         let comment = await Comment.create(
