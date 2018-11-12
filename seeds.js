@@ -24,32 +24,15 @@ function seedDB(){
     await Comment.remove({});
     await Campground.remove({});
     for(const seed of seeds){
-       Campground.create(seed);
+        let campground = await Campground.create(seed);
+        let comment = await Comment.create(
+            {
+                text: "This place is great, but I wish there was internet",
+                author: "Homer"
+            })
+        campground.comments.push(comment);
+        campground.save();
     }
-        
-        data.forEach(function(seed){
-            Campground.create(seed, function(err, campground){
-                if(err){
-                    console.log(err);
-                } else {
-                    console.log("added a campground");
-                    //create a comment
-                    Comment.create(
-                        {
-                            text: "This place is great, but I wish there was internet",
-                            author: "Homer"
-                        }, function(err, comment){
-                            if(err){
-                                console.log(err);
-                            } else {
-                                campground.comments.push(comment);
-                                campground.save();
-                                console.log("Created new comment");
-                            }
-                        });
-                }
-            });
-        });
 }
 
 
