@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var Campground = require("./models/campground");
 var Comment   = require("./models/comment");
 
-var campgrounds = [
+var seeds = [
     {
         name: "Decent Campground", 
         image: "https://farm4.staticflickr.com/3795/10131087094_c1c0a1c859.jpg",
