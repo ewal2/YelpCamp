@@ -22,12 +22,7 @@ var data = [
 
 function seedDB(){
     Comment.remove({}, function(err){
-        if(err){
-            console.log(err);
-        }
-        console.log("removed comments");
-        //Remove all campgrounds
-   Campground.remove({}, function(err){
+    Campground.remove({}, function(err){
         if(err){
             console.log(err);
         }
@@ -57,7 +52,6 @@ function seedDB(){
             });
         });
     }); 
-    //add a few comments
   });
 }
 
