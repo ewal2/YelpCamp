@@ -24,7 +24,7 @@ function seedDB(){
     await Campground.remove({});
     console.log("Camprgrounds removed");
     await Comment.remove({});
-    
+    console.log("Comments removed");
     
     for(const seed of seeds){
         let campground = await Campground.create(seed);
