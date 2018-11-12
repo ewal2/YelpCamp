@@ -20,7 +20,7 @@ var seeds = [
     }
 ];
 
-function seedDB(){
+async function seedDB(){
     await Campground.remove({});
     console.log("Camprgrounds removed");
     await Comment.remove({});
@@ -33,7 +33,7 @@ function seedDB(){
             {
                 text: "This place is great, but I wish there was internet",
                 author: "Homer"
-            })
+            });
         console.log("Comment created");
         campground.comments.push(comment);
         campground.save();
