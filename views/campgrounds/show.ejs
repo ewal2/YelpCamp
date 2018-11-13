@@ -14,7 +14,7 @@
                      </p>
                      <hr>
                      <p class="card-text"><%= campground.description %></p>
-                     <% if(currentUser && campground.author.id === currentUser._id || currentUser && currentUser.isAdmin){ %>
+                     <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
                         <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" class="form-group">
                                 <a class="btn btn-warning" href="/campgrounds/<%= campground._id%>/edit" role="button">Edit</a>
                                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="float-right">
                                 <p><%= moment(comment.createdAt).fromNow() %></p>
-                                <% if(currentUser && comment.author.id === currentUser._id || currentUser && currentUser.isAdmin){ %>
+                                <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
                                 <div class="float-right">
                                   <form class="delete-form" action="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
                                      <a class="btn btn-sm btn-warning" href="/campgrounds/<%=campground._id %>/comments/<%=comment._id %>/edit" role="button">Edit</a>
