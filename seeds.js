@@ -28,7 +28,7 @@ async function seedDB(){
         console.log("Comments removed");
         
         for(const seed of seeds){
-            let campground = await Campground.create(seed);
+           let campground = await Campground.create(seed);
             console.log("Campground created");
             let comment = await Comment.create(
                 {
