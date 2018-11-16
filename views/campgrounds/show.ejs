@@ -10,7 +10,7 @@
                     </p>
                     <h5 class="card-title"><%= campground.name %></h5>
                      <p>
-                        <em>Submitted by: <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></em>
+                        <em>Submitted by: <a href="/users/<%= campground.author.id %>"><%= campground.author.username %></a>, <%= moment(campground.createdAt).fromNow() %></em>
                      </p>
                      <hr>
                      <p class="card-text"><%= campground.description %></p>
