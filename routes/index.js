@@ -11,7 +11,7 @@ var crypto = require("crypto");
 //var domain = 'sandboxd059a61bddcf4eb088b9e2accd83d95f.mailgun.org';
 //var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
  
-
+ 
 //root route
 router.get("/", function(req, res){
     res.render("landing");
